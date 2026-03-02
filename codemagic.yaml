@@ -1,0 +1,34 @@
+workflows:
+  ios-release:
+    name: iOS Release
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      groups:
+        - apple_signing # Aquí configurarás tus certificados en la web de Codemagic
+      vars:
+        XCODE_WORKSPACE: "ios/Runner.xcworkspace"
+        XCODE_SCHEME: "Runner"
+      flutter: stable
+      xcode: latest
+    scripts:
+      - name: Set up .env file
+        script: |
+          # Recreamos el .env desde una variable de entorno de Codemagic 
+          # para que la app pueda cargar las URLs correctamente.
+          echo "$ENV_FILE_CONTENT" > .env
+      - name: Flutter pub get
+        script: |
+          flutter pub get
+      - name: Flutter build ipa
+        script: |
+          # El comando build ipa genera el archivo para la App Store.
+          # Si aún no tienes certificados, puedes usar --no-codesign 
+          # para solo verificar que compila bien.
+          flutter build ipa --release --export-method app-store
+    artifacts:
+      - build/ios/ipa/*.ipa
+    publishing:
+      email:
+        recipients:
+          - tu-correo@ejemplo.com # Cambia esto por tu correo
