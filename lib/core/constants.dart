@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color primary = Color(0xFF1C2C4C);
+  static const Color primary = Color(0xFF044C94);
+  static const Color accent = Color(0xFF1C94D4);
   static const Color white = Colors.white;
-  static const Color accent = Colors.blueAccent;
+  static const Color black = Colors.black;
 }
 
 class AppPadding {

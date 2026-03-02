@@ -70,7 +70,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
           },
         ),
       )
-      ..loadRequest(Uri.parse(AppConfig.baseUrl));
+      ..loadRequest(Uri.parse(AppConfig.startUrl));
   }
 
   Future<void> _checkPrivacyConsent() async {

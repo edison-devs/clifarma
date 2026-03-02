@@ -33,12 +33,9 @@ class NavigationHandler {
   }
 
   static Future<void> _checkUrlAndExecute(String url, WebViewController controller, {required bool isFinished}) async {
+    // Logic for site-specific CSS or element hiding for gruppoclifarma.com goes here
     if (url == AppConfig.cleanBaseUrl || url == AppConfig.baseUrl) {
       if (!isFinished) await onBaseUrlDetected(url, controller);
-    } else if (url.contains('agendar-cita')) {
-      if (!isFinished) {
-        await onAgendarCitaStarted(url, controller);
-      }
     }
   }
 }
