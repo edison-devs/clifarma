@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/constants.dart';
 
 class NoConnection extends StatelessWidget {
   final VoidCallback onRetry;
@@ -7,7 +8,7 @@ class NoConnection extends StatelessWidget {
   const NoConnection({
     super.key,
     required this.onRetry,
-    this.backgroundColor = const Color(0xFF1C2C4C),
+    this.backgroundColor = AppColors.primary,
   });
 
   @override
@@ -21,7 +22,7 @@ class NoConnection extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset(
-                'assets/images/Interiorisma.png',
+                'assets/images/clifarma.png',
                 width: 200,
               ),
               const SizedBox(height: 40),
@@ -56,7 +57,7 @@ class NoConnection extends StatelessWidget {
                 label: const Text('Reintentar'),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
-                  foregroundColor: const Color(0xFF1C2C4C),
+                  foregroundColor: AppColors.primary,
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),

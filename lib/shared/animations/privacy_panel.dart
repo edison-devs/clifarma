@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import '../../core/constants.dart';
 
 class PrivacyPanel extends StatefulWidget {
   final VoidCallback onAccept;
@@ -10,7 +11,7 @@ class PrivacyPanel extends StatefulWidget {
     super.key,
     required this.onAccept,
     required this.policyUrl,
-    this.backgroundColor = const Color(0xFF1C2C4C),
+    this.backgroundColor = AppColors.primary,
   });
 
   @override
@@ -38,7 +39,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Image.asset(
-                'assets/images/Interiorisma.png',
+                'assets/images/clifarma.png',
                 width: 180,
               ),
               const SizedBox(height: 48),
@@ -59,7 +60,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Para continuar usando la aplicación de Interiorisma, debes aceptar nuestras políticas de privacidad y términos de servicio.',
+                'Para continuar usando la aplicación de Clifarma, debes aceptar nuestras políticas de privacidad y términos de servicio.',
                 style: TextStyle(
                   color: Colors.white70,
                   fontSize: 16,
@@ -97,7 +98,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
                   ),
                   controlAffinity: ListTileControlAffinity.leading,
                   activeColor: Colors.white,
-                  checkColor: const Color(0xFF1C2C4C),
+                  checkColor: AppColors.primary,
                   contentPadding: EdgeInsets.zero,
                   dense: true,
                 ),
@@ -109,7 +110,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
                   onPressed: _isChecked ? widget.onAccept : null,
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.white,
-                    foregroundColor: const Color(0xFF1C2C4C),
+                    foregroundColor: AppColors.primary,
                     disabledBackgroundColor: Colors.white.withValues(alpha: 0.3),
                     disabledForegroundColor: Colors.white.withValues(alpha: 0.5),
                     padding: const EdgeInsets.symmetric(vertical: 16),

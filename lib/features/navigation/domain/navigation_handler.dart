@@ -1,7 +1,6 @@
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../../core/config.dart';
 import '../observers/base_url_observer.dart';
-import '../observers/agendar_cita_observer.dart';
 import '../observers/instagram_observer.dart';
 import '../observers/tiktok_observer.dart';
 

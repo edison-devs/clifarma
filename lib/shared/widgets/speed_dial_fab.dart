@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:share_plus/share_plus.dart';
+import '../../core/constants.dart';
 
 class SpeedDialFab extends StatefulWidget {
   /// Posición inicial. Si dy == -1, el widget la calcula al primer build.
@@ -44,7 +45,7 @@ class _SpeedDialFabState extends State<SpeedDialFab>
   late final AnimationController _animController;
   late final Animation<double> _scaleAnim;
 
-  static const _bgColor = Color(0xFF1C2C4C);
+  static const _bgColor = AppColors.primary;
 
   @override
   void initState() {
@@ -144,8 +145,8 @@ class _SpeedDialFabState extends State<SpeedDialFab>
   void _onShare() {
     _closeMenu();
     Share.share(
-      '¡Hola! Te invito a agendar una cita en Interiorisma. Puedes hacerlo desde aquí: ${widget.agendarUrl}',
-      subject: 'Agendar cita en Interiorisma',
+      '¡Hola! Te invito a agendar una cita en Clifarma. Puedes hacerlo desde aquí: ${widget.agendarUrl}',
+      subject: 'Agendar cita en Clifarma',
     );
   }
 

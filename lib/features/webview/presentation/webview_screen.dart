@@ -140,8 +140,9 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 if (isOnHomePage && loadingProgress == 100 && !hasConnectionError)
                   SpeedDialFab(
                     initialPosition: _fabPosition,
-                    onPositionChanged: (offset) =>
-                        if (mounted) setState(() => _fabPosition = offset),
+                    onPositionChanged: (offset) {
+                      if (mounted) setState(() => _fabPosition = offset);
+                    },
                     agendarUrl: AppConfig.agendaUrl,
                     whatsappNumber: AppConfig.whatsappNumber,
                     mapsUrl: AppConfig.googleMapsUrl,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../core/constants.dart';
 
 class Loader extends StatelessWidget {
   final int loadingProgress;
@@ -7,7 +8,7 @@ class Loader extends StatelessWidget {
   const Loader({
     super.key,
     required this.loadingProgress,
-    this.backgroundColor = const Color(0xFF1C2C4C),
+    this.backgroundColor = AppColors.primary,
   });
 
   @override
@@ -22,7 +23,7 @@ class Loader extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Image.asset(
-                  'assets/images/Interiorisma.png',
+                  'assets/images/clifarma.png',
                   width: 200,
                 ),
                 const SizedBox(height: 32),
