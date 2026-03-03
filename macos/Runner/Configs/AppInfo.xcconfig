@@ -8,7 +8,7 @@
 PRODUCT_NAME = web_view_pr1
 
 // The application's bundle identifier
-PRODUCT_BUNDLE_IDENTIFIER = com.interiorisma.app
+PRODUCT_BUNDLE_IDENTIFIER = com.clifarma.app
 
 // The copyright displayed in application information
-PRODUCT_COPYRIGHT = Copyright © 2026 com.interiorisma. All rights reserved.
+PRODUCT_COPYRIGHT = Copyright © 2026 com.clifarma. All rights reserved.

@@ -30,8 +30,7 @@ fun loadEnv(file: File): Map<String, String> {
 val envFile = File(project.projectDir.parentFile.parentFile, ".env")
 val env = loadEnv(envFile)
 
-android {
-    namespace = "com.interiorisma.app"
+    namespace = "com.clifarma.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -46,7 +45,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.interiorisma.app"
+        applicationId = "com.clifarma.app"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion

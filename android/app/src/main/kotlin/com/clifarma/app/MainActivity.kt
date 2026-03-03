@@ -1,4 +1,4 @@
-package com.interiorisma.app
+package com.clifarma.app
 
 import io.flutter.embedding.android.FlutterActivity
 
