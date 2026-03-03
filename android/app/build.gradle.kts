@@ -30,6 +30,7 @@ fun loadEnv(file: File): Map<String, String> {
 val envFile = File(project.projectDir.parentFile.parentFile, ".env")
 val env = loadEnv(envFile)
 
+android {
     namespace = "com.clifarma.app"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
