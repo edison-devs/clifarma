@@ -5,9 +5,16 @@ import '../observers/instagram_observer.dart';
 import '../observers/tiktok_observer.dart';
 
 class NavigationHandler {
-  static Future<NavigationDecision> handleNavigationRequest(NavigationRequest request) async {
+  static Future<NavigationDecision> handleNavigationRequest(
+    NavigationRequest request, 
+    WebViewController controller,
+  ) async {
     final url = request.url;
     
+    // Consultar al observador si debe prevenir esta navegación
+    final decision = await onBaseUrlDetected(url, controller);
+    if (decision == NavigationDecision.prevent) return decision;
+
     if (url.contains(AppConfig.instagramHost)) {
       return await onInstagramNavigation(url);
     } else if (url.contains(AppConfig.tiktokHost)) {
@@ -31,10 +38,11 @@ class NavigationHandler {
     await _checkUrlAndExecute(url, controller, isFinished: true);
   }
 
-  static Future<void> _checkUrlAndExecute(String url, WebViewController controller, {required bool isFinished}) async {
+  static Future<NavigationDecision> _checkUrlAndExecute(String url, WebViewController controller, {required bool isFinished}) async {
     // Logic for site-specific CSS or element hiding for gruppoclifarma.com goes here
     if (url == AppConfig.cleanBaseUrl || url == AppConfig.baseUrl) {
-      if (!isFinished) await onBaseUrlDetected(url, controller);
+      if (!isFinished) await onBaseUrlChanged(url, controller);
     }
+    return NavigationDecision.navigate;
   }
 }

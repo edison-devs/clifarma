@@ -11,7 +11,7 @@ class PrivacyPanel extends StatefulWidget {
     super.key,
     required this.onAccept,
     required this.policyUrl,
-    this.backgroundColor = AppColors.primary,
+    this.backgroundColor = AppColors.white,
   });
 
   @override
@@ -45,14 +45,14 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
               const SizedBox(height: 48),
               const Icon(
                 Icons.privacy_tip_rounded,
-                color: Colors.white,
+                color: AppColors.primary,
                 size: 64,
               ),
               const SizedBox(height: 24),
               const Text(
                 'Tu Privacidad es Importante',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.primary,
                   fontSize: 22,
                   fontWeight: FontWeight.bold,
                 ),
@@ -62,7 +62,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
               const Text(
                 'Para continuar usando la aplicación de Clifarma, debes aceptar nuestras políticas de privacidad y términos de servicio.',
                 style: TextStyle(
-                  color: Colors.white70,
+                  color: AppColors.primary,
                   fontSize: 16,
                 ),
                 textAlign: TextAlign.center,
@@ -73,7 +73,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
                 child: const Text(
                   'Leer Políticas de Privacidad',
                   style: TextStyle(
-                    color: Colors.white,
+                    color: AppColors.primary,
                     decoration: TextDecoration.underline,
                     fontWeight: FontWeight.w600,
                   ),
@@ -83,7 +83,7 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
               // Checkbox para aceptar condiciones
               Theme(
                 data: ThemeData(
-                  unselectedWidgetColor: Colors.white70,
+                  unselectedWidgetColor: AppColors.primary,
                 ),
                 child: CheckboxListTile(
                   value: _isChecked,
@@ -94,11 +94,11 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
                   },
                   title: const Text(
                     'He leído y acepto los términos y condiciones',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: AppColors.primary, fontSize: 14),
                   ),
                   controlAffinity: ListTileControlAffinity.leading,
-                  activeColor: Colors.white,
-                  checkColor: AppColors.primary,
+                  activeColor: AppColors.primary,
+                  checkColor: AppColors.white,
                   contentPadding: EdgeInsets.zero,
                   dense: true,
                 ),
@@ -109,10 +109,10 @@ class _PrivacyPanelState extends State<PrivacyPanel> {
                 child: ElevatedButton(
                   onPressed: _isChecked ? widget.onAccept : null,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    foregroundColor: AppColors.primary,
-                    disabledBackgroundColor: Colors.white.withValues(alpha: 0.3),
-                    disabledForegroundColor: Colors.white.withValues(alpha: 0.5),
+                    backgroundColor: AppColors.accent,
+                    foregroundColor: AppColors.white,
+                    disabledBackgroundColor: AppColors.accent.withOpacity(0.3),
+                    disabledForegroundColor: AppColors.white.withOpacity(0.5),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),

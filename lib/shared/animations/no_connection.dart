@@ -8,7 +8,7 @@ class NoConnection extends StatelessWidget {
   const NoConnection({
     super.key,
     required this.onRetry,
-    this.backgroundColor = AppColors.primary,
+    this.backgroundColor = AppColors.white,
   });
 
   @override
@@ -28,14 +28,14 @@ class NoConnection extends StatelessWidget {
               const SizedBox(height: 40),
               const Icon(
                 Icons.wifi_off_rounded,
-                color: Colors.white54,
+                color: AppColors.primary,
                 size: 56,
               ),
               const SizedBox(height: 16),
               const Text(
                 'Sin conexión a internet',
                 style: TextStyle(
-                  color: Colors.white,
+                  color: AppColors.primary,
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -45,7 +45,7 @@ class NoConnection extends StatelessWidget {
               const Text(
                 'Verifica tu conexión y vuelve a intentarlo.',
                 style: TextStyle(
-                  color: Colors.white60,
+                  color: AppColors.primary,
                   fontSize: 14,
                 ),
                 textAlign: TextAlign.center,
@@ -56,8 +56,8 @@ class NoConnection extends StatelessWidget {
                 icon: const Icon(Icons.refresh_rounded),
                 label: const Text('Reintentar'),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white,
-                  foregroundColor: AppColors.primary,
+                  backgroundColor: AppColors.accent,
+                  foregroundColor: AppColors.white,
                   padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),

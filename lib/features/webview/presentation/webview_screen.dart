@@ -37,7 +37,8 @@ class _WebViewScreenState extends State<WebViewScreen> {
       ..setJavaScriptMode(JavaScriptMode.unrestricted)
       ..setNavigationDelegate(
         NavigationDelegate(
-          onNavigationRequest: NavigationHandler.handleNavigationRequest,
+          onNavigationRequest: (request) => 
+              NavigationHandler.handleNavigationRequest(request, controller),
           onUrlChange: (change) {
             NavigationHandler.handleUrlChange(change, controller, (isHome) {
               if (mounted) setState(() => isOnHomePage = isHome);
@@ -130,12 +131,12 @@ class _WebViewScreenState extends State<WebViewScreen> {
                 if (hasConnectionError)
                   NoConnection(
                     onRetry: _retry,
-                    backgroundColor: AppColors.primary,
+                    backgroundColor: AppColors.white,
                   )
                 else
                   Loader(
                     loadingProgress: loadingProgress,
-                    backgroundColor: AppColors.primary,
+                    backgroundColor: AppColors.white,
                   ),
                 if (isOnHomePage && loadingProgress == 100 && !hasConnectionError)
                   SpeedDialFab(
@@ -152,7 +153,7 @@ class _WebViewScreenState extends State<WebViewScreen> {
                   PrivacyPanel(
                     onAccept: _acceptPrivacy,
                     policyUrl: AppConfig.privacyPolicyUrl,
-                    backgroundColor: AppColors.primary,
+                    backgroundColor: AppColors.white,
                   ),
               ],
             ),

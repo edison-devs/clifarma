@@ -8,7 +8,7 @@ class Loader extends StatelessWidget {
   const Loader({
     super.key,
     required this.loadingProgress,
-    this.backgroundColor = AppColors.primary,
+    this.backgroundColor = AppColors.white,
   });
 
   @override
@@ -31,8 +31,8 @@ class Loader extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   child: LinearProgressIndicator(
                     value: loadingProgress > 0 ? loadingProgress / 100.0 : null,
-                    color: Colors.white,
-                    backgroundColor: Colors.white.withOpacity(0.2),
+                    color: AppColors.primary,
+                    backgroundColor: AppColors.primary.withOpacity(0.1),
                     minHeight: 4,
                   ),
                 ),
